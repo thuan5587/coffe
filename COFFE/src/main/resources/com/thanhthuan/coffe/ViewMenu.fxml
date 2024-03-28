@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thanhthuan.coffe.ViewMenuController">
+   <children>
+      <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0" />
+      <BorderPane prefHeight="605.0" prefWidth="1252.0">
+         <left>
+            <AnchorPane prefHeight="600.0" prefWidth="263.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane id="#34e5eb" layoutX="-1.0" prefHeight="600.0" prefWidth="265.0" style="-fx-background-color: #33d0de;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="-0.6000000000000227" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane id="#34e5eb" layoutY="8.6" prefHeight="66.0" prefWidth="265.0" style="-fx-background-color: #25b0b8;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="8.6">
+                           <children>
+                              <Label layoutX="26.0" layoutY="42.0" prefHeight="53.0" prefWidth="231.0" text="Caffee Shop Managerment system">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="53.0" layoutY="181.0" text="Welcome , ">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="username" layoutX="132.0" layoutY="182.0" prefHeight="22.0" prefWidth="88.0" text="Thanh Thuận" textFill="#0f6789">
+                           <font>
+                              
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        
+                        <Button fx:id="dashboard_btn" layoutX="18.0" layoutY="231.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="228.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" text="THỐNG KÊ" />
+                        <Button fx:id="anvalibleFD_btn" layoutX="18.0" layoutY="296.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="228.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" text="THỰC ĐƠN" />
+                        <Button fx:id="order_btn" layoutX="18.0" layoutY="354.0" mnemonicParsing="false" onAction="#switchForm" prefHeight="45.0" prefWidth="228.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" text="MUA HÀNG" />
+                        <Button fx:id="logout" layoutX="14.0" layoutY="554.0" mnemonicParsing="false" onAction="#logout" prefHeight="28.0" prefWidth="22.0">
+                           <graphic>
+                              <FontIcon iconLiteral="fas-sign-out-alt" iconSize="20" text="" wrappingWidth="34.40000343322754" />
+                           </graphic></Button>
+                        <Label layoutX="77.0" layoutY="558.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <FontIcon iconLiteral="fas-comment-dollar" iconSize="50" layoutX="90.0" layoutY="160.0" text="" wrappingWidth="43.199951171875" />
+                        <Label layoutX="77.0" layoutY="558.0" text="Sign Out">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="602.0" prefWidth="543.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FontIcon layoutX="194.0" layoutY="146.0" />
+                  <Separator layoutX="11.0" layoutY="1.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="6.0" />
+                  <AnchorPane fx:id="dashboard_form" layoutX="12.0" prefHeight="608.0" prefWidth="815.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="48.0" prefHeight="172.0" prefWidth="803.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="9.0" prefHeight="159.0" prefWidth="247.0" styleClass="card">
+                                 <children>
+                                    <Label layoutX="65.0" layoutY="123.0" text="Số lượng người mua hàng">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dashboard_NC_Label_Text" layoutX="84.0" layoutY="14.0" prefHeight="30.0" prefWidth="136.0" text="                      0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <FontIcon iconLiteral="fas-comment-dollar" iconSize="50" layoutX="14.0" layoutY="69.0" text="" wrappingWidth="43.199951171875" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="278.0" layoutY="6.0" prefHeight="159.0" prefWidth="248.0" styleClass="card">
+                                 <children>
+                                    <FontIcon iconLiteral="fas-comment-dollar" iconSize="50" layoutX="24.0" layoutY="61.0" wrappingWidth="28.79998779296875" />
+                                    <Label layoutX="94.0" layoutY="122.0" prefHeight="22.0" prefWidth="139.0" text="Tiền trả lại hôm nay">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dashboard_TI" layoutX="85.0" layoutY="14.0" prefHeight="30.0" prefWidth="143.0" text="                  %0.0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="541.0" layoutY="6.0" prefHeight="159.0" prefWidth="248.0" styleClass="card">
+                                 <children>
+                                    <Label layoutX="130.0" layoutY="123.0" text="Tổng thu nhập">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dashboard_TIncome" layoutX="106.0" layoutY="14.0" prefHeight="30.0" prefWidth="128.0" text="              %0.0">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <FontIcon iconLiteral="far-money-bill-alt" iconSize="50" layoutX="29.0" layoutY="67.0" text="" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="14.0" layoutY="231.0" prefHeight="358.0" prefWidth="806.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="362.0" prefWidth="330.0">
+                                 <children>
+                                    <BarChart fx:id="dashboard_NOCChar" layoutX="-4.0" layoutY="8.0" prefHeight="354.0" prefWidth="336.0" title="Biểu đồ số lượng Oder">
+                                      <xAxis>
+                                        <CategoryAxis side="BOTTOM" />
+                                      </xAxis>
+                                      <yAxis>
+                                        <NumberAxis side="LEFT" />
+                                      </yAxis>
+                                    </BarChart>
+                                 </children>
+                              </AnchorPane>
+                              <AreaChart fx:id="dashboard_ICChar" layoutX="346.0" layoutY="29.0" prefHeight="343.0" prefWidth="446.0" title="Biểu đồ thu nhập">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </AreaChart>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="-4.0" layoutY="7.0" prefHeight="26.0" prefWidth="834.0">
+                           <children>
+                              <Button fx:id="Minimize" layoutX="759.0" layoutY="8.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="29.0" />
+                              <Button fx:id="close" layoutX="795.0" layoutY="8.0" mnemonicParsing="false" onAction="#close">
+                                 <graphic>
+                                    <FontIcon iconLiteral="fas-backspace" iconSize="15" />
+                                 </graphic>
+                              </Button>
+                              <Label layoutX="321.0" layoutY="11.0" prefHeight="22.0" prefWidth="157.0" text="Thanh Thuận COFFEE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font></Label>
+                              <FontIcon iconLiteral="fas-minus" iconSize="15" layoutX="768.0" layoutY="25.0" text="" wrappingWidth="14.4000244140625" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anvalibleFD_form" layoutX="102.0" layoutY="111.0" prefHeight="601.6" prefWidth="836.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="24.0" layoutY="38.0" prefHeight="541.0" prefWidth="258.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="20.0" layoutY="35.0" text="Product ID:">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="anvalibleFD_productID" layoutX="84.0" layoutY="31.0" prefHeight="26.0" prefWidth="108.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Label layoutX="3.0" layoutY="77.0" text="Product Name:">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="anvalibleFD_productName" layoutX="84.0" layoutY="71.0" prefHeight="26.0" prefWidth="158.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Label layoutX="51.0" layoutY="116.0" text="Type:">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="35.0" layoutY="154.0" text="Price($):">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="anvalibleFD_productPrice" layoutX="84.0" layoutY="148.0" prefHeight="26.0" prefWidth="158.0" promptText="0.0$" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <ComboBox fx:id="anvalibleFD_productType" layoutX="85.0" layoutY="111.0" prefHeight="26.0" prefWidth="159.0" promptText="Choose..." styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Label layoutX="42.0" layoutY="190.0" text="Status:">
+                                 <font>
+                                    <Font name="Tahoma" size="12.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="anvalibleFD_productStatus" layoutX="85.0" layoutY="185.0" onAction="#availableFDStatus" prefHeight="26.0" prefWidth="159.0" promptText="Choose..." styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Button fx:id="anvalibleFD_AddBtn" layoutX="7.0" layoutY="259.0" mnemonicParsing="false" onAction="#availableFDAdd" prefHeight="62.0" prefWidth="106.0" styleClass="add-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Thêm món" />
+                              <Button fx:id="anvalibleFD_updateBtn" layoutX="138.0" layoutY="259.0" mnemonicParsing="false" onAction="#availableFDUpdate" prefHeight="62.0" prefWidth="110.0" styleClass="update-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Sửa món" />
+                              <Button fx:id="anvalibleFD_clearBtn" layoutX="4.0" layoutY="344.0" mnemonicParsing="false" onAction="#availableFDClear" prefHeight="62.0" prefWidth="111.0" styleClass="clear-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Xóa thông tin" />
+                              <Button fx:id="anvalibleFD_deleteBtn" layoutX="139.0" layoutY="344.0" mnemonicParsing="false" onAction="#availableFDDelete" prefHeight="62.0" prefWidth="107.0" styleClass="delete-btn" text="xóa món" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="309.0" layoutY="36.0" prefHeight="543.0" prefWidth="523.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <TextField fx:id="anvalibleFD_search" layoutX="22.0" layoutY="30.0" onKeyTyped="#availableFDSearch" prefHeight="26.0" prefWidth="249.0" promptText="Search" styleClass="search" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <FontIcon iconLiteral="fab-sistrix" iconSize="15" layoutX="30.0" layoutY="48.0" wrappingWidth="21.5999755859375" />
+                              <TableView fx:id="anvalibleFD_tableView" layoutX="11.0" layoutY="80.0" onMouseClicked="#availableFDSelect" prefHeight="463.0" prefWidth="500.0" stylesheets="@../../../Style/mainFormDesign.css">
+                                <columns>
+                                  <TableColumn fx:id="anvalibleFD_col_productID" prefWidth="80.00006103515625" text="Product ID" />
+                                  <TableColumn fx:id="anvalibleFD_col_productName" prefWidth="125.5999755859375" text="Product Name" />
+                                    <TableColumn fx:id="anvalibleFD_col_productType" prefWidth="96.800048828125" text="Type" />
+                                    <TableColumn fx:id="anvalibleFD_col_productPrice" prefWidth="90.4000244140625" text="Price" />
+                                    <TableColumn fx:id="anvalibleFD_col_productStatus" prefWidth="106.4000244140625" text="Status" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="292.0" layoutY="19.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="0.0" />
+                        <AnchorPane layoutY="9.0" prefHeight="28.0" prefWidth="838.0">
+                           <children>
+                              <Button fx:id="close1" layoutX="797.0" mnemonicParsing="false" onAction="#close">
+                                 <graphic>
+                                    <FontIcon iconLiteral="fas-backspace" iconSize="15" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Minimize1" layoutX="759.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="29.0" />
+                              <FontIcon iconLiteral="fas-minus" iconSize="15" layoutX="766.0" layoutY="18.0" text="" wrappingWidth="14.4000244140625" />
+                              <Label layoutX="341.0" layoutY="2.0" prefHeight="22.0" prefWidth="157.0" text="Thanh Thuận COFFEE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="Order_form" layoutX="43.0" layoutY="49.0" prefHeight="619.2" prefWidth="836.8" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane layoutX="30.0" layoutY="43.0" prefHeight="543.0" prefWidth="436.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="Order_tableView" layoutX="7.0" layoutY="8.0" onMouseClicked="#orderSelectData" prefHeight="542.0" prefWidth="423.0">
+                                <columns>
+                                  <TableColumn fx:id="order_col_ID" prefWidth="79.20001602172852" text="Product ID" />
+                                  <TableColumn fx:id="order_col_name" prefWidth="110.39996337890625" text="Product Name" />
+                                    <TableColumn fx:id="order_col_type" prefWidth="76.00001525878906" text="Type" />
+                                    <TableColumn fx:id="order_col_price" prefWidth="76.0" text="Price($)" />
+                                    <TableColumn fx:id="order_col_quantity" prefWidth="77.59996337890624" text="Quantity" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="491.0" layoutY="45.0" prefHeight="537.0" prefWidth="334.0" stylesheets="@../../../Style/mainFormDesign.css">
+                           <styleClass>
+                              <String fx:value="while-bg" />
+                              <String fx:value="Shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="22.0" layoutY="54.0" text="ID sản phẩm:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="Order_ProductID" layoutX="118.0" layoutY="50.0" onMouseClicked="#orderProductId" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Label layoutX="20.0" layoutY="94.0" text="Tên sản phẩm:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="Order_ProductName" layoutX="118.0" layoutY="90.0" onMouseClicked="#orderProductName" prefWidth="150.0" promptText="Choose..." styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Spinner fx:id="Order_quantity" layoutX="119.0" layoutY="134.0" onMouseClicked="#orderQuantity" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Label layoutX="52.0" layoutY="137.0" text="Số lượng:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="Order_addBtn" layoutX="66.0" layoutY="189.0" mnemonicParsing="false" onAction="#orderAdd" prefHeight="56.0" prefWidth="90.0" styleClass="add-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Chọn món" />
+                              <Label layoutX="82.0" layoutY="326.0" text="Tiền:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="Order_total" layoutX="133.0" layoutY="291.0" prefHeight="18.0" prefWidth="158.0" text="\$0.0">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="49.0" layoutY="293.0" text="Tổng cộng:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="Order_amount" layoutX="134.0" layoutY="323.0" onAction="#orderAmount" promptText="\\$0.0" styleClass="textfield" stylesheets="@../../../Style/mainFormDesign.css" />
+                              <Button fx:id="Order_payBtn" layoutX="66.0" layoutY="417.0" mnemonicParsing="false" onAction="#orderPay" prefHeight="56.0" prefWidth="217.0" styleClass="add-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Thanh toán" />
+                              <Button fx:id="Order_removeBtn" layoutX="186.0" layoutY="189.0" mnemonicParsing="false" onAction="#orderRemove" prefHeight="56.0" prefWidth="92.0" styleClass="delete-btn" stylesheets="@../../../Style/mainFormDesign.css" text="Loại bỏ" />
+                              <Label fx:id="Order_balance" layoutX="133.0" layoutY="363.0" prefHeight="18.0" prefWidth="158.0" text="\$0.0">
+                                 <font>
+                                    <Font name="Arial" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="54.0" layoutY="364.0" text="Tiền thừa:">
+                                 <font>
+                                    <Font name="Tahoma" size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Separator layoutX="474.0" layoutY="14.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="6.0" />
+                        <AnchorPane layoutX="11.0" layoutY="11.0" prefHeight="30.0" prefWidth="815.0">
+                           <children>
+                              <Label layoutX="325.0" layoutY="3.0" prefHeight="22.0" prefWidth="157.0" text="Thanh Thuận COFFEE">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="close2" layoutX="777.0" layoutY="3.0" mnemonicParsing="false" onAction="#close">
+                                 <graphic>
+                                    <FontIcon iconLiteral="fas-backspace" iconSize="15" />
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="Minimize2" layoutX="737.0" layoutY="2.0" mnemonicParsing="false" onAction="#minimize" prefHeight="26.0" prefWidth="29.0" />
+                              <FontIcon iconLiteral="fas-minus" iconSize="15" layoutX="745.0" layoutY="20.0" text="" wrappingWidth="14.4000244140625" />
+                           </children></AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

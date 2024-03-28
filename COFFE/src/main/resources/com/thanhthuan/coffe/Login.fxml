@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.thanhthuan.coffe.LoginController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="4.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/Images Thuan/coffee-beans-5928036_960_720.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="233.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="usernameTextField" layoutX="233.0" layoutY="103.0" prefHeight="26.0" prefWidth="205.0" promptText="username" />
+      <Text layoutX="234.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Label layoutX="200.0" layoutY="16.0" prefHeight="46.0" prefWidth="274.0" text="WELCOME COFFEE">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="251.0" layoutY="198.0" mnemonicParsing="false" onAction="#loginButtonOnAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #0ba8e6;" text="LOGIN" />
+      <Text layoutX="502.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thanh Thuận" />
+      <Button fx:id="cancelButton" layoutX="252.0" layoutY="233.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="154.0" style="-fx-background-color: #0ba8e6;" text="Cancel" />
+      <PasswordField fx:id="passwordPasswordField" layoutX="234.0" layoutY="152.0" prefHeight="26.0" prefWidth="206.0" promptText="password" />
+      <Label fx:id="loginMessageLabel" layoutX="218.0" layoutY="56.0" prefHeight="18.0" prefWidth="255.0" />
+   </children>
+</AnchorPane>
